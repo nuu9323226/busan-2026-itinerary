@@ -106,6 +106,16 @@
   }
   nav.dayjump a b{ display:block; font-family:Georgia,"Noto Serif TC",serif; font-size:1.05rem; color:var(--teal); }
 
+  .maplist{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    margin:-24px 0 32px; padding:11px 16px;
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    box-shadow:var(--shadow); text-decoration:none;
+    color:var(--teal); font-size:0.88rem; font-weight:600;
+  }
+  .maplist:hover{ border-color:var(--teal); }
+  .maplist::before{ content:"📍"; font-size:0.95em; }
+
   section.day{ margin-bottom:56px; scroll-margin-top:16px; }
 
   .day-banner{
@@ -143,6 +153,16 @@
   .item:first-of-type{ border-top:1px solid var(--line); }
   .item .time{ color:var(--teal); font-size:0.82rem; font-weight:600; padding-top:2px; }
   .item .title{ margin:0 0 4px; font-weight:600; font-size:1rem; }
+  .item .title a.maplink{
+    color:inherit; text-decoration:none; border-bottom:1px dashed var(--teal);
+  }
+  .item .title a.maplink:hover, .item .title a.maplink:focus-visible{ border-bottom-style:solid; }
+  .item .title a.maplink::after{
+    content:"↗"; display:inline-block; margin-left:3px; font-size:0.75em;
+    color:var(--teal); border-bottom:none;
+  }
+  .item.tip .title a.maplink{ border-bottom-color:var(--accent); }
+  .item.tip .title a.maplink::after{ color:var(--accent); }
   .item .desc{ margin:0; color:var(--ink-soft); font-size:0.92rem; }
   .item.tip{ background:var(--accent-soft); border-radius:10px; padding-left:10px; padding-right:10px; margin:2px 0; border-top:1px solid transparent; }
   .item.tip .time{ color:var(--accent); }
@@ -186,6 +206,8 @@
     <a href="#day4"><b>Day 4</b>採買 · 賦歸</a>
   </nav>
 
+  <a class="maplist" href="https://maps.app.goo.gl/FxPpEgDTnS9JbcEp6" target="_blank" rel="noopener">在 Google 地圖開啟完整景點清單</a>
+
   <!-- DAY 1 -->
   <section class="day" id="day1">
     <div class="day-banner">
@@ -207,9 +229,9 @@
     <div class="item"><div class="time mono">16:40–19:55</div><div><p class="title">飛往釜山</p><p class="desc">桃園 ✈ 釜山，飛行時間約 2 小時 15 分鐘。</p></div></div>
     <div class="item"><div class="time mono">19:55–20:50</div><div><p class="title">抵達與入境</p><p class="desc">金海機場辦理入境、領取行李、開通 eSIM / SIM 卡。</p></div></div>
     <div class="item"><div class="time mono">20:50–21:35</div><div><p class="title">前往飯店</p><p class="desc">搭乘計程車直達飯店（車程 40–50 分，車資約 ₩30,000–40,000）。</p></div></div>
-    <div class="item"><div class="time mono">21:35–22:00</div><div><p class="title">飯店 Check-in</p><p class="desc">Hotel La Muette（호텔 라뮤에뜨）辦理入住、整理行李（鄰近海邊與傳統市場，後續天數往返極便利）。</p></div></div>
-    <div class="item"><div class="time mono">22:00–23:00</div><div><p class="title">宵夜：豬肉湯飯</p><p class="desc">嚴湧帛豬肉湯飯 海雲台店（海雲台區佑洞，步行 5–8 分）。推薦：豬肉湯飯、白切豬肉、韭菜＋蝦醬調味。</p></div></div>
-    <div class="item"><div class="time mono">23:00–23:30</div><div><p class="title">夜間散步 ＆ 採買</p><p class="desc">散步至海雲台海水浴場與 Gunam-ro 商圈，感受海岸夜景。</p></div></div>
+    <div class="item"><div class="time mono">21:35–22:00</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+La+Muette+Busan" target="_blank" rel="noopener">飯店 Check-in</a></p><p class="desc">Hotel La Muette（호텔 라뮤에뜨）辦理入住、整理行李（鄰近海邊與傳統市場，後續天數往返極便利）。</p></div></div>
+    <div class="item"><div class="time mono">22:00–23:00</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=嚴湧帛豬肉湯飯+海雲台店+Busan" target="_blank" rel="noopener">宵夜：豬肉湯飯</a></p><p class="desc">嚴湧帛豬肉湯飯 海雲台店（海雲台區佑洞，步行 5–8 分）。推薦：豬肉湯飯、白切豬肉、韭菜＋蝦醬調味。</p></div></div>
+    <div class="item"><div class="time mono">23:00–23:30</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=海雲台海水浴場+Haeundae+Beach" target="_blank" rel="noopener">夜間散步 ＆ 採買</a></p><p class="desc">散步至海雲台海水浴場與 Gunam-ro 商圈，感受海岸夜景。</p></div></div>
 
     <div class="note warn">
       <h3>超商必買策略（GS25 / CU）</h3>
@@ -232,16 +254,16 @@
       <span>西面／快閃店／樂天超市</span><span class="arrow">→</span><span>返回海雲台</span>
     </div>
 
-    <div class="item"><div class="time mono">08:20–08:55</div><div><p class="title">早餐</p><p class="desc">EGGDROP 海雲台店（步行 2–3 分）。推薦：Garlic Bacon Cheese、Hash Brown、冰美式。</p></div></div>
-    <div class="item"><div class="time mono">09:05–09:45</div><div><p class="title">交通移動</p><p class="desc">搭乘計程車前往 Arte Museum Busan（車程約 30–35 分鐘）。</p></div></div>
-    <div class="item"><div class="time mono">09:45–11:30</div><div><p class="title">光影藝術展</p><p class="desc">Arte Museum Busan：沉浸式光影展覽，建議停留 1.5–2 小時。</p></div></div>
-    <div class="item"><div class="time mono">11:35–12:00</div><div><p class="title">寶可夢打卡</p><p class="desc">國立海洋博物館（步行 5 分）：進行 Pokémon 打卡點拍照與集章。</p></div></div>
-    <div class="item tip"><div class="time mono">12:10–12:50</div><div><p class="title"><span class="pill">TIP</span>甜點拍照</p><p class="desc">Miffy Cafe Busan（計程車 10 分）：精準停留 40 分鐘，主攻甜點、咖啡與拍照。</p></div></div>
-    <div class="item"><div class="time mono">13:00–14:10</div><div><p class="title">烤肉午餐</p><p class="desc">石岩生鹽烤肉（석암 생 소금구이）：推薦生鹽烤豬肉、豬頸肉、五花肉、韓式冷麵。</p></div></div>
+    <div class="item"><div class="time mono">08:20–08:55</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=EGGDROP+海雲台店+Busan" target="_blank" rel="noopener">早餐</a></p><p class="desc">EGGDROP 海雲台店（步行 2–3 分）。推薦：Garlic Bacon Cheese、Hash Brown、冰美式。</p></div></div>
+    <div class="item"><div class="time mono">09:05–09:45</div><div><p class="title">交通移動</p><p class="desc">搭乘計程車前往 <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Arte+Museum+Busan" target="_blank" rel="noopener">Arte Museum Busan</a>（車程約 30–35 分鐘）。</p></div></div>
+    <div class="item"><div class="time mono">09:45–11:30</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Arte+Museum+Busan" target="_blank" rel="noopener">光影藝術展</a></p><p class="desc">Arte Museum Busan：沉浸式光影展覽，建議停留 1.5–2 小時。官網：<a href="https://kr.artemuseum.com/BUSAN" target="_blank" rel="noopener">kr.artemuseum.com</a></p></div></div>
+    <div class="item"><div class="time mono">11:35–12:00</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=國立海洋博物館+釜山" target="_blank" rel="noopener">寶可夢打卡</a></p><p class="desc">國立海洋博物館（步行 5 分）：進行 Pokémon 打卡點拍照與集章。</p></div></div>
+    <div class="item tip"><div class="time mono">12:10–12:50</div><div><p class="title"><span class="pill">TIP</span><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Miffy+Cafe+Busan" target="_blank" rel="noopener">甜點拍照</a></p><p class="desc">Miffy Cafe Busan（計程車 10 分）：精準停留 40 分鐘，主攻甜點、咖啡與拍照。</p></div></div>
+    <div class="item"><div class="time mono">13:00–14:10</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=석암+생+소금구이+부산" target="_blank" rel="noopener">烤肉午餐</a></p><p class="desc">石岩生鹽烤肉（석암 생 소금구이）：推薦生鹽烤豬肉、豬頸肉、五花肉、韓式冷麵。</p></div></div>
     <div class="item"><div class="time mono">14:20–14:50</div><div><p class="title">前往西面</p><p class="desc">搭乘地鐵 1 號線前往西面商圈（車程約 30 分鐘）。</p></div></div>
-    <div class="item tip"><div class="time mono">14:50–16:50</div><div><p class="title"><span class="pill">TIP</span>寶可夢快閃</p><p class="desc">Pokémon Mega Festa 快閃店（樂天百貨釜山本店）：優先直奔購物，限定商品、Mega Festa 周邊、拍照區與集章。</p></div></div>
+    <div class="item tip"><div class="time mono">14:50–16:50</div><div><p class="title"><span class="pill">TIP</span><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=롯데백화점+부산본점" target="_blank" rel="noopener">寶可夢快閃</a></p><p class="desc">Pokémon Mega Festa 快閃店（樂天百貨釜山本店）：優先直奔購物，限定商品、Mega Festa 周邊、拍照區與集章。官網：<a href="https://www.lotteshopping.com/store/main?cstrCd=0005" target="_blank" rel="noopener">lotteshopping.com</a></p></div></div>
     <div class="item"><div class="time mono">16:50–19:00</div><div><p class="title">百貨與超市</p><p class="desc">樂天百貨（Pokémon Store, Kakao Friends, Sanrio）＆ B1 樂天超市（必買海苔、零食、泡麵作為庫存）。</p></div></div>
-    <div class="item"><div class="time mono">19:00–21:00</div><div><p class="title">商圈逛街</p><p class="desc">西面商圈：逛 Olive Young, DAISO, MUSINSA Standard, SPAO, ABC MART, 地下街。</p></div></div>
+    <div class="item"><div class="time mono">19:00–21:00</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=西面+Seomyeon+Busan" target="_blank" rel="noopener">商圈逛街</a></p><p class="desc">西面商圈：逛 Olive Young, DAISO, MUSINSA Standard, SPAO, ABC MART, 地下街。</p></div></div>
     <div class="item"><div class="time mono">21:00–21:50</div><div><p class="title">返回飯店</p><p class="desc">搭乘地鐵返回海雲台 Hotel La Muette 休息。</p></div></div>
   </section>
 
@@ -260,27 +282,27 @@
       <span>無人機秀</span><span class="arrow">→</span><span>返回海雲台</span>
     </div>
 
-    <div class="item tip"><div class="time mono">07:30–08:20</div><div><p class="title"><span class="pill">TIP</span>冠軍咖啡</p><p class="desc">MOMOS Coffee Marine City：世界冠軍手沖咖啡、Flat White、可頌。咖啡加可頌即可，留胃口給午餐。</p></div></div>
-    <div class="item"><div class="time mono">08:30–09:00</div><div><p class="title">交通移動</p><p class="desc">搭乘計程車前往海東龍宮寺（車程約 20 分鐘）。</p></div></div>
-    <div class="item"><div class="time mono">09:00–10:30</div><div><p class="title">景點參觀</p><p class="desc">海東龍宮寺：參觀海岸觀景台、108 階梯、海上觀音與十二生肖像。</p></div></div>
+    <div class="item tip"><div class="time mono">07:30–08:20</div><div><p class="title"><span class="pill">TIP</span><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=MOMOS+Coffee+Marine+City+Busan" target="_blank" rel="noopener">冠軍咖啡</a></p><p class="desc">MOMOS Coffee Marine City：世界冠軍手沖咖啡、Flat White、可頌。咖啡加可頌即可，留胃口給午餐。</p></div></div>
+    <div class="item"><div class="time mono">08:30–09:00</div><div><p class="title">交通移動</p><p class="desc">搭乘計程車前往<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=해동용궁사+부산" target="_blank" rel="noopener">海東龍宮寺</a>（車程約 20 分鐘）。</p></div></div>
+    <div class="item"><div class="time mono">09:00–10:30</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=해동용궁사+부산" target="_blank" rel="noopener">景點參觀</a></p><p class="desc">海東龍宮寺：參觀海岸觀景台、108 階梯、海上觀音與十二生肖像。官網：<a href="http://yongkungsa.or.kr/" target="_blank" rel="noopener">yongkungsa.or.kr</a></p></div></div>
     <div class="item"><div class="time mono">10:30–10:40</div><div><p class="title">步行移動</p><p class="desc">步行前往 Skyline Luge（約 5–10 分鐘）。</p></div></div>
-    <div class="item"><div class="time mono">10:40–13:00</div><div><p class="title">斜坡滑車</p><p class="desc">Skyline Luge Busan：建議購買 3–4 趟套票，體驗極速滑車（預留 2 小時）。</p></div></div>
-    <div class="item tip"><div class="time mono">13:05–14:10</div><div><p class="title"><span class="pill">TIP</span>海鮮午餐</p><p class="desc">대게만찬（Daege Manchan，計程車 3–5 分）：改點雪蟹／海鮮套餐（約 ₩3~4 萬），含烤蝦、海鮮拼盤、蟹膏炒飯、蟹肉拉麵。</p></div></div>
+    <div class="item"><div class="time mono">10:40–13:00</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Skyline+Luge+Busan" target="_blank" rel="noopener">斜坡滑車</a></p><p class="desc">Skyline Luge Busan：建議購買 3–4 趟套票，體驗極速滑車（預留 2 小時）。官網：<a href="https://busan.skylineluge.kr/en/" target="_blank" rel="noopener">busan.skylineluge.kr</a></p></div></div>
+    <div class="item tip"><div class="time mono">13:05–14:10</div><div><p class="title"><span class="pill">TIP</span><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=대게만찬+부산" target="_blank" rel="noopener">海鮮午餐</a></p><p class="desc">대게만찬（Daege Manchan，計程車 3–5 分）：改點雪蟹／海鮮套餐（約 ₩3~4 萬），含烤蝦、海鮮拼盤、蟹膏炒飯、蟹肉拉麵。</p></div></div>
     <div class="item"><div class="time mono">14:10–14:40</div><div><p class="title">返回海雲台</p><p class="desc">搭乘計程車回到海雲台（車程約 25–30 分鐘）。</p></div></div>
-    <div class="item tip"><div class="time mono">14:40–16:20</div><div><p class="title"><span class="pill">TIP</span>海景汗蒸幕</p><p class="desc">Hill Spa：多泡 10 分鐘，體驗海景汗蒸房、冰房、足浴，徹底放鬆雙腿。</p></div></div>
-    <div class="item"><div class="time mono">16:20–16:50</div><div><p class="title">前往廣安里</p><p class="desc">搭乘地鐵前往廣安站。</p></div></div>
-    <div class="item"><div class="time mono">16:50–17:10</div><div><p class="title">寶可夢打卡</p><p class="desc">廣安站 Pokémon Mega Festa：尋找伊布與進化家族裝飾拍照集章。</p></div></div>
-    <div class="item"><div class="time mono">17:10–18:15</div><div><p class="title">提早晚餐</p><p class="desc">水邊最高豬肉湯飯（計程車 8–10 分）：提早用餐避開熱門人潮。</p></div></div>
-    <div class="item"><div class="time mono">18:20–18:40</div><div><p class="title">人氣貝果</p><p class="desc">All Sunday Bagel：外帶 Original、Blueberry、Salt Butter 貝果。</p></div></div>
+    <div class="item tip"><div class="time mono">14:40–16:20</div><div><p class="title"><span class="pill">TIP</span><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Hill+Spa+해운대" target="_blank" rel="noopener">海景汗蒸幕</a></p><p class="desc">Hill Spa：多泡 10 分鐘，體驗海景汗蒸房、冰房、足浴，徹底放鬆雙腿。</p></div></div>
+    <div class="item"><div class="time mono">16:20–16:50</div><div><p class="title">前往廣安里</p><p class="desc">搭乘地鐵前往<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=광안역+부산" target="_blank" rel="noopener">廣安站</a>。</p></div></div>
+    <div class="item"><div class="time mono">16:50–17:10</div><div><p class="title">寶可夢打卡</p><p class="desc"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=광안역+부산" target="_blank" rel="noopener">廣安站</a> Pokémon Mega Festa：尋找伊布與進化家族裝飾拍照集章。</p></div></div>
+    <div class="item"><div class="time mono">17:10–18:15</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=물가최고돼지국밥+광안리" target="_blank" rel="noopener">提早晚餐</a></p><p class="desc">水邊最高豬肉湯飯（計程車 8–10 分）：提早用餐避開熱門人潮。</p></div></div>
+    <div class="item"><div class="time mono">18:20–18:40</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=All+Sunday+Bagel+Busan" target="_blank" rel="noopener">人氣貝果</a></p><p class="desc">All Sunday Bagel：外帶 Original、Blueberry、Salt Butter 貝果。</p></div></div>
 
     <div class="day-banner" style="margin:18px 0;">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Gwangan_Bridge_at_night.JPG/1280px-Gwangan_Bridge_at_night.JPG" alt="廣安大橋夜景">
       <span class="tag">廣安里夜景 Gwangalli</span>
     </div>
 
-    <div class="item tip"><div class="time mono">18:40–20:00</div><div><p class="title"><span class="pill">TIP</span>海灘卡位</p><p class="desc">廣安里沙灘：欣賞夕陽、海綿寶寶裝置與廣安大橋夜景。18:40 前務必帶貝果在沙灘卡位。</p></div></div>
+    <div class="item tip"><div class="time mono">18:40–20:00</div><div><p class="title"><span class="pill">TIP</span><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=광안리해수욕장+Gwangalli+Beach" target="_blank" rel="noopener">海灘卡位</a></p><p class="desc">廣安里沙灘：欣賞夕陽、海綿寶寶裝置與廣安大橋夜景。18:40 前務必帶貝果在沙灘卡位。</p></div></div>
     <div class="item"><div class="time mono">20:00–20:15</div><div><p class="title">無人機秀</p><p class="desc">Pokémon Drone Show：數百架無人機夜空排陣，重頭戲必看！</p></div></div>
-    <div class="item tip"><div class="time mono">20:20–20:30</div><div><p class="title"><span class="pill">TIP</span>外帶炸雞</p><p class="desc">Outdark 廣安里店：看完秀直接外帶炸雞與薯條。</p></div></div>
+    <div class="item tip"><div class="time mono">20:20–20:30</div><div><p class="title"><span class="pill">TIP</span><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=아웃다크+광안리점" target="_blank" rel="noopener">外帶炸雞</a></p><p class="desc">Outdark 廣安里店：看完秀直接外帶炸雞與薯條。</p></div></div>
     <div class="item"><div class="time mono">21:00</div><div><p class="title">返回飯店</p><p class="desc">搭車回海雲台飯店，配啤酒與炸雞享受完美夜晚。</p></div></div>
   </section>
 
@@ -301,14 +323,14 @@
 
     <div class="item"><div class="time mono">07:50–08:30</div><div><p class="title">晨間早餐</p><p class="desc">首選 Paris Baguette（火腿起司可頌、三明治、美式）；備選 EGGDROP 或 CU/GS25 超商。</p></div></div>
     <div class="item"><div class="time mono">08:30–09:00</div><div><p class="title">退房整理</p><p class="desc">清點護照、機票、行李、退稅單與戰利品後辦理退房。</p></div></div>
-    <div class="item"><div class="time mono">09:00–09:30</div><div><p class="title">前往光復店</p><p class="desc">搭乘計程車前往樂天百貨光復店（車程約 30 分鐘）。</p></div></div>
-    <div class="item tip"><div class="time mono">09:30–10:40</div><div><p class="title"><span class="pill">TIP</span>伴手禮補貨</p><p class="desc">樂天百貨光復店：只買最後伴手禮與美妝，避免行李過重。</p></div></div>
-    <div class="item"><div class="time mono">10:40–11:10</div><div><p class="title">釜山站寄物</p><p class="desc">搭計程車至釜山站（10 分鐘），將行李寄放於車站置物櫃／寄物中心。</p></div></div>
+    <div class="item"><div class="time mono">09:00–09:30</div><div><p class="title">前往光復店</p><p class="desc">搭乘計程車前往<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=롯데백화점+광복점" target="_blank" rel="noopener">樂天百貨光復店</a>（車程約 30 分鐘）。</p></div></div>
+    <div class="item tip"><div class="time mono">09:30–10:40</div><div><p class="title"><span class="pill">TIP</span><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=롯데백화점+광복점" target="_blank" rel="noopener">伴手禮補貨</a></p><p class="desc">樂天百貨光復店：只買最後伴手禮與美妝，避免行李過重。官網：<a href="https://www.lotteshopping.com/store/main?cstrCd=0333" target="_blank" rel="noopener">lotteshopping.com</a></p></div></div>
+    <div class="item"><div class="time mono">10:40–11:10</div><div><p class="title">釜山站寄物</p><p class="desc">搭計程車至<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=부산역+Busan+Station" target="_blank" rel="noopener">釜山站</a>（10 分鐘），將行李寄放於車站置物櫃／寄物中心。</p></div></div>
     <div class="item"><div class="time mono">11:10–12:00</div><div><p class="title">車站午餐</p><p class="desc">於釜山站周邊或美食街享用豬肉湯飯、韓式拌飯或冷麵（選擇出餐快者）。</p></div></div>
-    <div class="item"><div class="time mono">12:00–12:15</div><div><p class="title">前往白淺灘</p><p class="desc">搭乘計程車前往白淺灘文化村（車程約 15 分鐘）。</p></div></div>
-    <div class="item"><div class="time mono">12:15–16:00</div><div><p class="title">漫步白淺灘</p><p class="desc">白淺灘文化村慢遊：絕影海岸散步道、文創小店、海景咖啡廳（Aether），專心享受景色。</p></div></div>
+    <div class="item"><div class="time mono">12:00–12:15</div><div><p class="title">前往白淺灘</p><p class="desc">搭乘計程車前往<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=흰여울문화마을+Busan" target="_blank" rel="noopener">白淺灘文化村</a>（車程約 15 分鐘）。</p></div></div>
+    <div class="item"><div class="time mono">12:15–16:00</div><div><p class="title"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=흰여울문화마을+Busan" target="_blank" rel="noopener">漫步白淺灘</a></p><p class="desc">白淺灘文化村慢遊：絕影海岸散步道、文創小店、海景咖啡廳（<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Aether+영도+부산" target="_blank" rel="noopener">Aether</a>），專心享受景色。</p></div></div>
     <div class="item"><div class="time mono">16:00–16:30</div><div><p class="title">領取行李</p><p class="desc">搭計程車返回釜山站領取行李，進行最後戰利品整理。</p></div></div>
-    <div class="item"><div class="time mono">16:30–17:10</div><div><p class="title">前往機場</p><p class="desc">搭乘計程車直達金海國際機場（車程約 30–40 分鐘）。</p></div></div>
+    <div class="item"><div class="time mono">16:30–17:10</div><div><p class="title">前往機場</p><p class="desc">搭乘計程車直達<a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=김해국제공항+Gimhae+International+Airport" target="_blank" rel="noopener">金海國際機場</a>（車程約 30–40 分鐘）。</p></div></div>
     <div class="item"><div class="time mono">17:10–20:45</div><div><p class="title">報到與離境</p><p class="desc">辦理登機、託運、退稅與免稅店採買。航班 IT607（20:45 起飛）飛回台灣。</p></div></div>
 
     <div class="note">
